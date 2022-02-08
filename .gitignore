@@ -1,0 +1,15 @@
+conduit-test-service-tutorial/.idea
+conduit-test-service-tutorial/.vscode
+conduit-test-service-tutorial/.vscode/target/**
+.txt
+*.rar
+.gradle
+bin
+.settings
+build
+target
+.classpath
+.project
+settings.gradle
+.idea
+.vscode
