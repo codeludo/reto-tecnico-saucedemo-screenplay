@@ -15,6 +15,7 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 @AllArgsConstructor
 public class LoginAs implements Interaction {
 
+    // Add user type information to perform the kind of conditional task
 
     public static LoginAs standardUser() {
         return instrumented(LoginAs.class);

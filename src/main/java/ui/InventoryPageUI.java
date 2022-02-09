@@ -28,7 +28,7 @@ public class InventoryPageUI {
             .the("burger menu button")
             .located(By.xpath("//*[@id='react-burger-menu-btn']"));
 
-    public static final Target SVG_ = Target
+    public static final Target SVG_PRODUCTS_COUNTER = Target
             .the("red dot over shopping cart counting items in the cart")
             .locatedBy("//*[@id=\"shopping_cart_container\"]/a/span");
 }

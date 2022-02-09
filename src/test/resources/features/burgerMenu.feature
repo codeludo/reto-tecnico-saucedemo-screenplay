@@ -24,5 +24,4 @@ Feature: Burger menu testing
     When I want to reset the app state
       | selection | Reset App State |
     Then I should see the items has been reset
-      | validation | TRUE |
 
