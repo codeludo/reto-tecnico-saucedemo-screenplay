@@ -15,5 +15,5 @@ Feature: Tax to total purchase
         | Last Name  | the tester |
         | Zip        | 98192      |
       Then validate that the tax is exactly 8%
-        | tax | 2.40 |
+        | Tax | 2.40 |
 
