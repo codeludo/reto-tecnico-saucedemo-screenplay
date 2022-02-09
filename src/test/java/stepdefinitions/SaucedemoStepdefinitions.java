@@ -6,10 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import models.User;
+import net.serenitybdd.core.annotations.events.BeforeExample;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
@@ -29,18 +31,26 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class SaucedemoStepdefinitions {
 
-    @Managed
+/*
+*   when I use @Managed and @Before with this setup
+*   it only works one time each scenario but doesn't in each example
+*   so throws this error
+*   Session ID is null. Using WebDriver after calling quit()?*/
+
+
+/*    @Managed
     private static WebDriver hisBrowser;
 
     @Before
-    public static void setup() {
+    public void setup() {
+
         WebDriverManager.chromedriver().setup();
         hisBrowser = new ChromeDriver();
         hisBrowser.manage().window().maximize();
         OnStage.setTheStage(Cast.ofStandardActors());
         OnStage.theActorCalled("Camilo");
         theActorInTheSpotlight().can(BrowseTheWeb.with(hisBrowser));
-    }
+    }*/
 
     /**
      *  shopping cart scenario
@@ -48,7 +58,10 @@ public class SaucedemoStepdefinitions {
      */
     @Given("that I am in the saucedemo page at {string}")
     public void that_i_am_in_the_saucedemo_page_at(String url) {
+        OnStage.setTheStage(new OnlineCast());
+        OnStage.theActorCalled("Camilo");
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
+
     }
 
 
@@ -77,6 +90,7 @@ public class SaucedemoStepdefinitions {
         credentials.put("username", User.getUsername());
         credentials.put("password", User.getPassword());
         theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(credentials));
+        theActorInTheSpotlight().attemptsTo(ChooseProduct.onInventoryPage());
         theActorInTheSpotlight().attemptsTo(GoToOtherPage.onMainMenu(data));
     }
     @Then("I should see depends on selection")

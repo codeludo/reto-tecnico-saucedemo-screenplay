@@ -38,4 +38,6 @@ public class VerifyPage implements Question<Boolean> {
         String currentUrl = driver.getCurrentUrl();
         return currentUrl.contains(url.get("validation"));
     }
+
+
 }

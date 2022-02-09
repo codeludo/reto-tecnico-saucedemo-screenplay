@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         //dryRun = true,
-        tags = "@main-menu",
+        tags = "@burger-menu",
         features = "src/test/resources/features",
         glue = "stepdefinitions"
 )
