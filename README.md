@@ -2,7 +2,7 @@
 
 ## Reto-tecnico-saucedemo-screenplay
 
-##Automatizacion de la pagina [https://www.saucedemo.com/](https://www.saucedemo.com/)
+## Automatizacion de la pagina [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
 ### Para echar a andar el test necesitas:
 * Gradle
@@ -17,7 +17,7 @@
 * Yo como usuario del servicio necesito validar si la opción filtro si funciona para validar que el primer ítem que aparezca sea el que tenga el precio mayor.
 * Yo como usuario del servicio necesito validar que el valor final (impuesto + producto) si sea el correcto.
 
-⌨️ con ❤️ por Codeludo 🤓
+## ⌨️ con ❤️ por Codeludo 🤓
 
 
 
