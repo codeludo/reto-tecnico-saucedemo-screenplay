@@ -1,8 +1,5 @@
 package models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 public class MainMenuSelection {
 
     private String choice;
@@ -12,11 +9,10 @@ public class MainMenuSelection {
     }
 
     public String getChoice() {
-        setChoice();
         return choice;
     }
 
-    public void setChoice() {
+    public void setChoice(String choice) {
         this.choice = choice;
     }
 }

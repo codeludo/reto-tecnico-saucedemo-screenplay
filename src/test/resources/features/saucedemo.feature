@@ -16,10 +16,18 @@ Feature: purchase saucedemo
     Then should the shopping cart show the product is not null
 
     @main-menu
-    Scenario: main menu
+    Scenario Outline: main menu
       When I select an option in main menu
+        | selection | <selection> |
       Then I should see depends on selection
-        | option 1 | https://saucelabs.com/inventory.html |
-        | option 2 | https://saucelabs.com/               |
-        | option 2 | https://www.saucedemo.com/           |
-        | option 3 | null                                 |
+        | validation | <validation> |
+      Examples:
+        | selection | validation                               |
+        | All Items | https://www.saucedemo.com/inventory.html |
+        | About     | https://saucelabs.com/                   |
+        #| Logout    | https://www.saucedemo.com/               |
+        #| Reset App State     | 0                                        |
+
+
+
+

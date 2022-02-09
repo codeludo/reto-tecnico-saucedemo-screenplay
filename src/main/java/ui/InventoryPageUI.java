@@ -15,8 +15,17 @@ public class InventoryPageUI {
             .the("product to select")
             .located(By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]"));
 
+    /**
+     * here to replace string in xpath
+     * to avoid "The of() method is not supported for By-type Targets" issue ?
+     * when method located(By.xpath('the xpath') is used
+     */
     public static final Target MAINMENU_SELECTION   = Target
             .the("main selection")
-            .located(By.xpath("//*[@id='{0}']"));
+            .locatedBy("//*[text()='{0}']");
+
+    public static final Target BTN_BURGER_MENU = Target
+            .the("burger menu button")
+            .located(By.xpath("//*[@id='react-burger-menu-btn']"));
 }
 

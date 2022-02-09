@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import models.MainMenuSelection;
+import models.User;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.Cast;
@@ -14,12 +14,14 @@ import net.thucydides.core.annotations.Managed;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import questions.VerifyPage;
 import questions.VerifyProduct;
 import tasks.ChooseProduct;
-import tasks.GoToAbout;
+import tasks.GoToOtherPage;
 import tasks.GoToShoppingCart;
 import tasks.LoginAsStandardUser;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -48,6 +50,8 @@ public class SaucedemoStepdefinitions {
     public void that_i_am_in_the_saucedemo_page_at(String url) {
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
     }
+
+
     @When("I login as standard user")
     public void i_login_as_standard_user(Map<String, String> data) {
         theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(data));
@@ -68,21 +72,16 @@ public class SaucedemoStepdefinitions {
      *
      */
     @When("I select an option in main menu")
-    public void i_select_an_option_in_main_menu(MainMenuSelection data) {
-
-
-        theActorInTheSpotlight().attemptsTo(GoToAbout.onMainMenu(data));
+    public void i_select_an_option_in_main_menu(Map<String, String> data) {
+        Map<String, String> credentials = new HashMap<>();
+        credentials.put("username", User.getUsername());
+        credentials.put("password", User.getPassword());
+        theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(credentials));
+        theActorInTheSpotlight().attemptsTo(GoToOtherPage.onMainMenu(data));
     }
     @Then("I should see depends on selection")
-    public void i_should_see_depends_on_selection(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    public void i_should_see_depends_on_selection(Map<String, String> withUrl) {
+        theActorInTheSpotlight().should(seeThat(VerifyPage.onTheInventoryPage(withUrl)));
     }
 
 

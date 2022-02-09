@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        dryRun = true,
-        //tags = "@shoppingCart",
+        //dryRun = true,
+        tags = "@main-menu",
         features = "src/test/resources/features",
         glue = "stepdefinitions"
 )
