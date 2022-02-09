@@ -1,35 +1,23 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import models.User;
-import net.serenitybdd.core.annotations.events.BeforeExample;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.thucydides.core.annotations.Managed;
 import org.hamcrest.Matchers;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import questions.VerifyPage;
 import questions.VerifyProduct;
 import tasks.ChooseProduct;
-import tasks.GoToOtherPage;
 import tasks.GoToShoppingCart;
 import tasks.LoginAsStandardUser;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-public class SaucedemoStepdefinitions {
+public class ShopingCartStepdefinitions {
 
 /*
 *   when I use @Managed and @Before with this setup
@@ -61,10 +49,7 @@ public class SaucedemoStepdefinitions {
         OnStage.setTheStage(new OnlineCast());
         OnStage.theActorCalled("Camilo");
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
-
     }
-
-
     @When("I login as standard user")
     public void i_login_as_standard_user(Map<String, String> data) {
         theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(data));
@@ -79,26 +64,4 @@ public class SaucedemoStepdefinitions {
         theActorInTheSpotlight().should(seeThat(VerifyProduct.onCartPage(),
                 Matchers.equalTo(Boolean.TRUE)));
     }
-
-    /**
-     *  main menu  scenario
-     *
-     */
-    @When("I select an option in main menu")
-    public void i_select_an_option_in_main_menu(Map<String, String> data) {
-        Map<String, String> credentials = new HashMap<>();
-        credentials.put("username", User.getUsername());
-        credentials.put("password", User.getPassword());
-        theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(credentials));
-        theActorInTheSpotlight().attemptsTo(ChooseProduct.onInventoryPage());
-        theActorInTheSpotlight().attemptsTo(GoToOtherPage.onMainMenu(data));
-    }
-    @Then("I should see depends on selection")
-    public void i_should_see_depends_on_selection(Map<String, String> withUrl) {
-        theActorInTheSpotlight().should(seeThat(VerifyPage.onTheInventoryPage(withUrl)));
-    }
-
-
-
-
 }

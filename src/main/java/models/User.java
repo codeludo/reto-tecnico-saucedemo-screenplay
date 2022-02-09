@@ -2,13 +2,12 @@ package models;
 
 import constants.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
 @AllArgsConstructor
 public class User {
 
 
-    public static String getUsername() {
+    public static String getStandardUser() {
         return AcceptedUsernames.STANDARD_USER;
     }
 

@@ -1,7 +1,6 @@
 package tasks;
 
 import lombok.AllArgsConstructor;
-import models.MainMenuSelection;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -13,12 +12,12 @@ import static ui.InventoryPageUI.BTN_BURGER_MENU;
 import static ui.InventoryPageUI.MAINMENU_SELECTION;
 
 @AllArgsConstructor
-public class GoToOtherPage implements Task {
+public class TestTheBurgerMenu implements Task {
 
     Map<String, String> selection;
 
-    public static GoToOtherPage onMainMenu(Map<String, String> choice) {
-        return instrumented(GoToOtherPage.class, choice);
+    public static TestTheBurgerMenu selectingSomeMenu(Map<String, String> choice) {
+        return instrumented(TestTheBurgerMenu.class, choice);
     }
 
     @Override

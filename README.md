@@ -1,11 +1,22 @@
 
 
-## Reto-tecnico-saucedemo-screenplay
+## Reto-técnico-saucedemo-screenplay
 
-## Automatizacion de la pagina [https://www.saucedemo.com/](https://www.saucedemo.com/)
+## Automatización de la página [https://www.saucedemo.com/](https://www.saucedemo.com/)
 
 ### Para echar a andar el test necesitas:
 * Gradle
+* Java 8
+
+### Patron de diseño del test:
+* Screenplay
+
+### Frameworks y Herramientas
+
+* SerenityBDD
+* Cucumber
+* Lombok
+* JUnit4
 
 ### Escenarios:
 
