@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import actions.LoginAs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -51,8 +52,9 @@ public class ShopingCartStepdefinitions {
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
     }
     @When("I login as standard user")
-    public void i_login_as_standard_user(Map<String, String> data) {
-        theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(data));
+    public void i_login_as_standard_user() {
+        theActorInTheSpotlight().attemptsTo(LoginAs.standardUser());
+        //theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(data));
     }
     @When("select any displayed result to go to the shopping cart")
     public void select_any_displayed_result_to_go_to_the_shopping_cart() {

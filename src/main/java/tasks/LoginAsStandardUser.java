@@ -1,5 +1,6 @@
 package tasks;
 
+import actions.LoginAs;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -25,10 +26,10 @@ public class LoginAsStandardUser implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(Enter.theValue(data.get("username")).into(TXTB_USERNAME));
         actor.attemptsTo(Enter.theValue(data.get("password")).into(TXTB_PASSWORD));
         actor.attemptsTo(Click.on(BTN_LOGIN));
-
 
     }
 }

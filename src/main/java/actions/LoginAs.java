@@ -20,6 +20,8 @@ public class LoginAs implements Interaction {
     public static LoginAs standardUser() {
         return instrumented(LoginAs.class);
     }
+
+
     private  Map<String, String> withCredentials(){
         Map<String, String> data = new HashMap<>();
         data.put("username", User.getStandardUser());
