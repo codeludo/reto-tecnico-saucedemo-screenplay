@@ -6,7 +6,7 @@ Feature: purchase saucedemo
   Background:
     Given that I am in the saucedemo page at 'https://www.saucedemo.com/'
 
-  @shoppingCart
+  @shoppintCart
   Scenario: shopping cart
 
     When I login as standard user
@@ -15,19 +15,18 @@ Feature: purchase saucedemo
     And select any displayed result to go to the shopping cart
     Then should the shopping cart show the product is not null
 
-    @burger-menu
+    @main-menu
     Scenario Outline: main menu
       When I select an option in main menu
         | selection | <selection> |
       Then I should see depends on selection
         | validation | <validation> |
       Examples:
-        | selection       | validation                               |
-        | All Items       | https://www.saucedemo.com/inventory.html |
-        | About           | https://saucelabs.com/                   |
-        | Logout          | https://www.saucedemo.com/               |
-        | Reset App State | https://www.saucedemo.com/inventory.html |
-
+        | selection | validation                               |
+        | All Items | https://www.saucedemo.com/inventory.html |
+        | About     | https://saucelabs.com/                   |
+        #| Logout    | https://www.saucedemo.com/               |
+        #| Reset App State     | 0                                        |
 
 
 
