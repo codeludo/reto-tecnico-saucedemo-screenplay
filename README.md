@@ -11,12 +11,17 @@
 ### Patron de diseño del test:
 * Screenplay
 
-### Frameworks y Herramientas
+### Framework
 
 * SerenityBDD
+
+### Algunas dependencias usadas son: 
+
 * Cucumber
 * Lombok
 * JUnit4
+
+Ver [build.gradle](https://github.com/codeludo/reto-tecnico-saucedemo-screenplay/blob/master/build.gradle) para todas las dependencias.
 
 #### uso de tags:
 * Solo necesitas agregar los tags que nombran cada escenario o comentar la línea para correr toda la prueba.
