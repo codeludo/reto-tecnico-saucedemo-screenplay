@@ -7,13 +7,13 @@ Feature: Tax to total purchase
     Given that I am in the saucedemo page at 'https://www.saucedemo.com/'
 
     @tax
-    Scenario:
+    Scenario: tax validation
       When I login as standard user
       And select any displayed result to go to the shopping cart
       And checkout my information
         | First Name | Codeludo   |
         | Last Name  | the tester |
         | Zip        | 98192      |
-      Then validate that the tax is exactly 8%
+      Then validate that the tax is correct
         | Tax | 2.40 |
 
