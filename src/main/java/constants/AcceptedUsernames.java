@@ -1,5 +1,9 @@
 package constants;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor(access= AccessLevel.PRIVATE)
 public class AcceptedUsernames {
 
     public static final String STANDARD_USER = "standard_user";
