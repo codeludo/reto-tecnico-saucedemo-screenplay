@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         //dryRun = true,
-        tags = "@tax",
+        tags = "@completePurchase",
         features = "src/test/resources/features",
         glue = "stepdefinitions"
 )
