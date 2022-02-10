@@ -54,8 +54,8 @@ public class ShopingCartStepdefinitions {
     @When("I login as standard user")
     public void i_login_as_standard_user() {
         theActorInTheSpotlight().attemptsTo(LoginAs.standardUser());
-        //theActorInTheSpotlight().attemptsTo(LoginAsStandardUser.onTheSaucedemoPage(data));
     }
+
     @When("select any displayed result to go to the shopping cart")
     public void select_any_displayed_result_to_go_to_the_shopping_cart() {
         theActorInTheSpotlight().attemptsTo(ChooseProduct.onInventoryPage());
