@@ -41,7 +41,7 @@ Ver [build.gradle](https://github.com/codeludo/reto-tecnico-saucedemo-screenplay
 
 🙆‍♂ Yo como usuario del servicio necesito validar si la opción filtro si funciona para validar que el primer ítem que aparezca sea el que tenga el precio mayor.
 
-🙆‍♂ Yo como usuario del servicio necesito validar que el valor final (impuesto + producto) si sea el correcto.
+✅ Yo como usuario del servicio necesito validar que el valor final (impuesto + producto) si sea el correcto.
 
 ### ⌨️ con ❤️ por Codeludo 🤓
 
