@@ -43,7 +43,6 @@ serenity {
 
 dependencies {
     implementation 'com.github.javafaker:javafaker:1.0.2',
-            'io.github.bonigarcia:webdrivermanager:5.0.3',
             'org.slf4j:slf4j-simple:1.7.35',
             'net.serenity-bdd:serenity-core:3.1.20',
             'net.serenity-bdd:serenity-screenplay:3.1.20',
@@ -53,7 +52,9 @@ dependencies {
             'com.fasterxml.jackson.core:jackson-annotations:2.13.1',
     */
             'net.serenity-bdd:serenity-ensure:3.1.20'
-    testImplementation 'net.serenity-bdd:serenity-cucumber:3.1.20',
+    testImplementation 'net.serenity-bdd:serenity-core:3.1.20',
+            'net.serenity-bdd:serenity-cucumber:3.1.20',
+            //'io.github.bonigarcia:webdrivermanager:5.0.3',
             'junit:junit:4.13.2',
             'org.hamcrest:hamcrest:2.2'
 }

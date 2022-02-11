@@ -7,9 +7,9 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor(access= AccessLevel.PRIVATE)
 public class User {
     public static String getStandardUser() {
-        return AcceptedUsernames.STANDARD_USER;
+        return UserData.STANDARD_USER;
     }
     public static String getPassword() {
-        return AcceptedUsernames.PASSWORD;
+        return UserData.PASSWORD;
     }
 }

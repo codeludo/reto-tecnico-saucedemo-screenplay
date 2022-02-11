@@ -17,7 +17,7 @@ Feature: checkout steps
       Then  validate that the tax is correct
         | Tax | 2.40 |
 
-  @completePurchase
+  @verifyPurchase
   Scenario: complete the purchase to validate message of success
     When I login as standard user
     And select any displayed result to go to the shopping cart
@@ -27,3 +27,13 @@ Feature: checkout steps
       | Zip        | 98192      |
     And finish the purchase
     Then I should see the message 'THANK YOU FOR YOUR ORDER'
+
+  @verifyTotal
+  Scenario: complete the purchase to validate total value
+    When I login as standard user
+    And select any displayed result to go to the shopping cart
+    And checkout my information
+      | First Name | Codeludo   |
+      | Last Name  | the tester |
+      | Zip        | 98192      |
+    Then I should see the value is '32.39'

@@ -22,8 +22,12 @@ public class CheckoutPageUI {
                 .located(By.xpath("//*[@id='continue']"));
 
     public static final Target LBL_TAX = Target
-                .the("the tax label")
+                .the("the tax value label")
                 .located(By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[6]"));
+
+    public static final Target LBL_TOTAL = Target
+            .the("the total value label")
+            .located(By.xpath("//*[@id=\"checkout_summary_container\"]/div/div[2]/div[7]"));
 
     public static final Target BTN_FINISH = Target
             .the("finish button")
