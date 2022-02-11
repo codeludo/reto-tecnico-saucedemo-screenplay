@@ -1,8 +1,11 @@
 package ui;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
+@NoArgsConstructor(access=AccessLevel.PRIVATE)
 public class CartPageUI {
 
     public static final Target LBL_PRODUCT = Target

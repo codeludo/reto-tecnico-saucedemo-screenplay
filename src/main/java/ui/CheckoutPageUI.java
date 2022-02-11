@@ -1,8 +1,11 @@
 package ui;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
+@NoArgsConstructor(access=AccessLevel.PRIVATE)
 public class CheckoutPageUI {
 
     public static final Target TXTB_FIRSTNAME = Target

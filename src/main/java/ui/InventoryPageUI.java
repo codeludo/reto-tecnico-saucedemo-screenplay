@@ -31,5 +31,21 @@ public class InventoryPageUI {
     public static final Target SVG_PRODUCTS_COUNTER = Target
             .the("red dot over shopping cart counting items in the cart")
             .locatedBy("//*[@id=\"shopping_cart_container\"]/a/span");
+
+    public static final Target SELECTION = Target
+            .the("sort product dropdown")
+            .locatedBy("//*[text()=\"{0}\"]");
+
+    public static final Target ITEM_LBLNAME = Target
+            .the("the ordered item in the inventory")
+            .locatedBy("//*[text()='{0}']");
+
+    public static final Target ITEM_LBLPRICE = Target
+            .the("the item in the inventory")
+            .locatedBy("//*[text()='$']");
+
+
+
+
 }
 
