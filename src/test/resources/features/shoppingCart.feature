@@ -7,8 +7,8 @@ Feature: shopping cart testing
     Given that I am in the saucedemo page at 'https://www.saucedemo.com/'
 
   @shoppingCart
-  Scenario: shopping cart
-    When I login as standard user
+  Scenario: 01 - shopping cart
+    When I login as 'standard user'
     And select any displayed result to go to the shopping cart
     Then should the shopping cart show the product is not null
 

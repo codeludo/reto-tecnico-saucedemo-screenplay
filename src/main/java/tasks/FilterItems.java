@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import org.openqa.selenium.WebElement;
 
 import java.util.Map;
 

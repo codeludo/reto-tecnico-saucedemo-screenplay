@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import java.util.Map;
-
 import static ui.InventoryPageUI.SVG_PRODUCTS_COUNTER;
 
 @AllArgsConstructor

@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Click;
 import org.hamcrest.Matchers;
 import questions.TheSuccessfulMessageCheckout;
-import questions.VerifyingTheValue;
+import questions.VerifyTheValue;
 
 import java.util.Map;
 
@@ -41,7 +41,7 @@ public class CheckoutStepdefinitions {
     }
     @Then("validate that the tax is correct")
     public void validate_that_the_tax_is_correct(Map<String, String> correctValue) {
-        theActorInTheSpotlight().should(seeThat(VerifyingTheValue.isTheValue(correctValue),
+        theActorInTheSpotlight().should(seeThat(VerifyTheValue.isTheValue(correctValue),
                 Matchers.equalTo(Boolean.TRUE)));
     }
 
@@ -49,6 +49,6 @@ public class CheckoutStepdefinitions {
 
     @Then("I should see the value is {string}")
     public void i_should_see_the_value_is(String value) {
-        theActorInTheSpotlight().should(seeThat(VerifyingTheValue.isTheValue(value)));
+        theActorInTheSpotlight().should(seeThat(VerifyTheValue.isTheValue(value)));
     }
 }

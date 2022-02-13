@@ -1,16 +1,19 @@
 package ui;
 
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
+@NoArgsConstructor(access= AccessLevel.PRIVATE)
 public class InventoryPageUI {
 
     public static final Target BTN_SHOPPINGCART = Target
             .the("shopping cart button")
             .located(By.xpath("//*[@id=\"shopping_cart_container\"]/a"));
 
-    
+
     public static final Target  BTN_ADDPRODUCT = Target
             .the("product to select")
             .located(By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]"));
@@ -43,6 +46,13 @@ public class InventoryPageUI {
     public static final Target ITEM_LBLPRICE = Target
             .the("the item in the inventory")
             .locatedBy("//*[text()='$']");
+
+
+    public static final Target INVENTORY_CONTAINER = Target
+            .the("items container list")
+            .locatedBy("//div[@class=\"inventory_list\"]/div");
+
+
 
 
 

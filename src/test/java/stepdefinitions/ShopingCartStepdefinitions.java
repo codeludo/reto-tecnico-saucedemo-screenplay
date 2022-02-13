@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import actions.LoginAs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,9 +10,6 @@ import org.hamcrest.Matchers;
 import questions.VerifyProduct;
 import tasks.ChooseProduct;
 import tasks.GoToShoppingCart;
-import tasks.LoginAsStandardUser;
-
-import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -51,10 +47,7 @@ public class ShopingCartStepdefinitions {
         OnStage.theActorCalled("Camilo");
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
     }
-    @When("I login as standard user")
-    public void i_login_as_standard_user() {
-        theActorInTheSpotlight().attemptsTo(LoginAs.standardUser());
-    }
+
 
     @When("select any displayed result to go to the shopping cart")
     public void select_any_displayed_result_to_go_to_the_shopping_cart() {

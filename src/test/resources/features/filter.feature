@@ -7,8 +7,8 @@ Feature: filter to order price in products
     Given that I am in the saucedemo page at 'https://www.saucedemo.com/'
 
   @filter
-  Scenario Outline: order the products acording to example selection
-    When I login as standard user
+  Scenario Outline: 01 - order the products according to example selection
+    When I login as 'standard user'
     And select the price filter
       | selection | <selection> |
     Then first inventory list should contains filtered item

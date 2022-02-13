@@ -6,8 +6,10 @@ Feature: Burger menu testing
   Background:
     Given that I am in the saucedemo page at 'https://www.saucedemo.com/'
 
+
   @burger-menu-3items
-  Scenario Outline: Burger menu for All items, About, Logout
+  Scenario Outline: 01 - Burger menu for All items, About, Logout
+    When I login as 'standard user'
     And I select an option in main menu
       | selection | <selection> |
 
@@ -20,8 +22,9 @@ Feature: Burger menu testing
       | Logout    | https://www.saucedemo.com/               |
 
   @burger-menu-resetStateItem
-  Scenario: burger menu reset all items
-    When I want to reset the app state
+  Scenario: 02 - burger menu reset all items
+    When I login as 'standard user'
+    And I want to reset the app state
       | selection | Reset App State |
     Then I should see the items has been reset
 

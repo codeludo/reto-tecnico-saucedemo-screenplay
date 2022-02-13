@@ -1,13 +1,9 @@
 package questions;
 
 
-import com.google.common.base.Verify;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.ensure.KnowableAnswer;
-import net.serenitybdd.screenplay.ensure.StringEnsure;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
@@ -15,14 +11,14 @@ import java.util.Map;
 import static net.serenitybdd.core.Serenity.getDriver;
 
 @AllArgsConstructor
-public class VerifyPage implements Question<Boolean> {
+public class VerifyCurrentPage implements Question<Boolean> {
 
     Map<String, String> url;
 
 
 
-    public static VerifyPage onTheInventoryPage(Map<String, String> withUrl) {
-        return new VerifyPage(withUrl);
+    public static VerifyCurrentPage onTheInventoryPage(Map<String, String> withUrl) {
+        return new VerifyCurrentPage(withUrl);
     }
 
 
