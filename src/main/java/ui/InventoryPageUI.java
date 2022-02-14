@@ -52,10 +52,10 @@ public class InventoryPageUI {
             .the("items container list")
             .locatedBy("//div[@class=\"inventory_list\"]/div");
 
+    //*[@class="inventory_list"]/div[1]/div/a/img
 
-
-
-
-
+    public static final Target ITEM_IMAGE = Target
+            .the("image of item in inventory")
+            .locatedBy("//*[@class=\"inventory_list\"]/div['{0}']/div/a/img");
 }
 

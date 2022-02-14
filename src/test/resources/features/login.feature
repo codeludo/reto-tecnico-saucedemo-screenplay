@@ -16,3 +16,12 @@ Feature: login users
   Scenario: login as locked out user
     When I login as 'locked out user'
     Then I can see an error message
+
+  @loginProblem
+  Scenario: login as problem user
+    When I login as 'problem user'
+    Then I can see in the inventory page all images are equals
+    And I only can add three items to shopping cart
+    And I can not remove items from button in inventory
+    And I can not filter items
+    And checkout my information shows error message
