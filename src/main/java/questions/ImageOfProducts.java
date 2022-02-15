@@ -19,8 +19,11 @@ public class ImageOfProducts implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         ArrayList<String> localImgArraySrc = new ArrayList<>();
-        for (int i = 0; i < INVENTORY_CONTAINER.resolveAllFor(actor).size(); i++) {
+        for (int i = 1; i < INVENTORY_CONTAINER.resolveAllFor(actor).size(); i++) {
             localImgArraySrc.add(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getAttribute("src"));
+            System.out.println("###################################\n##############################");
+            System.out.println(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getElement());
+            System.out.println(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getAttribute("alt"));
         }
         
         for(String src: localImgArraySrc){

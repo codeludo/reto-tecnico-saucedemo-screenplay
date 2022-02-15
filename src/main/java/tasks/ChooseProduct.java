@@ -17,7 +17,7 @@ public class ChooseProduct implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(BTN_ADDPRODUCT));
+        actor.attemptsTo(Click.on(BTN_ADD_FIRST_PRODUCT));
 
     }
 }

@@ -4,10 +4,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import static ui.InventoryPageUI.INVENTORY_CONTAINER;
 @AllArgsConstructor
-public class NumberOfProducts implements Question<Boolean> {
+public class ContainerHaveSix implements Question<Boolean> {
     Integer number;
-    public static NumberOfProducts is(Integer quantity) {
-        return new NumberOfProducts(quantity);
+    public static ContainerHaveSix items(Integer quantity) {
+        return new ContainerHaveSix(quantity);
     }
     @Override
     public Boolean answeredBy(Actor actor) {

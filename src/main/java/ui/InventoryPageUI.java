@@ -14,7 +14,7 @@ public class InventoryPageUI {
             .located(By.xpath("//*[@id=\"shopping_cart_container\"]/a"));
 
 
-    public static final Target  BTN_ADDPRODUCT = Target
+    public static final Target BTN_ADD_FIRST_PRODUCT = Target
             .the("product to select")
             .located(By.xpath("//*[@id=\"add-to-cart-sauce-labs-backpack\"]"));
 
@@ -41,7 +41,7 @@ public class InventoryPageUI {
 
     public static final Target ITEM_LBLNAME = Target
             .the("the ordered item in the inventory")
-            .locatedBy("//*[text()='{0}']");
+            .locatedBy("//*[text()='{0}']"); // here we pass a string to the xpath
 
     public static final Target ITEM_LBLPRICE = Target
             .the("the item in the inventory")
@@ -52,10 +52,12 @@ public class InventoryPageUI {
             .the("items container list")
             .locatedBy("//div[@class=\"inventory_list\"]/div");
 
-    //*[@class="inventory_list"]/div[1]/div/a/img
 
     public static final Target ITEM_IMAGE = Target
-            .the("image of item in inventory")
-            .locatedBy("//*[@class=\"inventory_list\"]/div['{0}']/div/a/img");
-}
+            .the("image of item in inventory") // here we pass an integer to the xpath
+            .locatedBy("//*[@class=\"inventory_list\"]/div[{0}]/div/a/img");
 
+    public static final Target BTN_ADD = Target
+            .the("button add to cart") // here we pass an integer to the xpath
+            .locatedBy("//*[@class=\"inventory_list\"]/div[{0}]/div[2]/div[2]/button");
+}

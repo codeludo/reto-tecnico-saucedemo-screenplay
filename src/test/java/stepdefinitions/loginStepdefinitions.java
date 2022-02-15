@@ -2,9 +2,12 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import questions.CartListHas;
 import questions.ErrorMessage;
 import questions.ImageOfProducts;
-import questions.NumberOfProducts;
+import questions.ContainerHaveSix;
+import tasks.ChooseAllProducts;
+import tasks.GoToShoppingCart;
 import tasks.Login;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -23,7 +26,7 @@ public class loginStepdefinitions {
     // as standard_user, problem_user and performance_glitch_user
     @Then("I should see {int} products")
     public void i_should_see_products(Integer quantity) {
-        theActorInTheSpotlight().should(seeThat(NumberOfProducts.is(quantity),
+        theActorInTheSpotlight().should(seeThat(ContainerHaveSix.items(quantity),
                 equalTo(Boolean.TRUE)));
     }
 
@@ -48,8 +51,10 @@ public class loginStepdefinitions {
     //adding items to shopping cart
     @Then("I only can add three items to shopping cart")
     public void i_only_can_add_three_items_to_shopping_cart() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorInTheSpotlight().attemptsTo(ChooseAllProducts.onInventoryPage());
+        theActorInTheSpotlight().attemptsTo(GoToShoppingCart.onCartPage());
+        theActorInTheSpotlight().should(seeThat(CartListHas.items(6),
+                equalTo(Boolean.FALSE)));
     }
 
     //removing items from shopping cart
