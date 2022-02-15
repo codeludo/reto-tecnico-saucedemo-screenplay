@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.screenplay.actions.Click;
 import questions.CartListHas;
 import questions.ErrorMessage;
 import questions.ImageOfProducts;
@@ -13,6 +14,7 @@ import tasks.Login;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
+import static ui.CartPageUI.BTN_CONTINUE_SHOPPING;
 
 public class loginStepdefinitions {
 
@@ -53,15 +55,18 @@ public class loginStepdefinitions {
     public void i_only_can_add_three_items_to_shopping_cart() {
         theActorInTheSpotlight().attemptsTo(ChooseAllProducts.onInventoryPage());
         theActorInTheSpotlight().attemptsTo(GoToShoppingCart.onCartPage());
-        theActorInTheSpotlight().should(seeThat(CartListHas.items(6),
-                equalTo(Boolean.FALSE)));
+        theActorInTheSpotlight().should(seeThat(CartListHas.items(3),
+                equalTo(Boolean.TRUE)));
     }
 
     //removing items from shopping cart
     @Then("I can not remove items from button in inventory")
     public void i_can_not_remove_items_from_button_in_inventory() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        theActorInTheSpotlight().attemptsTo(Click.on(BTN_CONTINUE_SHOPPING));
+        theActorInTheSpotlight().attemptsTo(ChooseAllProducts.onInventoryPage());
+        theActorInTheSpotlight().attemptsTo(GoToShoppingCart.onCartPage());
+        theActorInTheSpotlight().should(seeThat(CartListHas.items(3),
+                equalTo(Boolean.TRUE)));
     }
 
     //filtering items

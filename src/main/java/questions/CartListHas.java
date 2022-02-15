@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static ui.CartPageUI.CART_ITEMS;
 
 @AllArgsConstructor
@@ -18,8 +17,8 @@ public class CartListHas implements Question<Boolean> {
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        if(CART_ITEMS.resolveAllFor(actor).size()<6) return Boolean.FALSE;
-        else return Boolean.TRUE;
+        if(CART_ITEMS.resolveAllFor(actor).size()==numberOfItems) return Boolean.TRUE;
+        else return Boolean.FALSE;
     }
 }
 
