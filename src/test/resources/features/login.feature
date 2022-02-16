@@ -25,3 +25,9 @@ Feature: login users
     And I can not remove items from button in inventory
     And I can not filter items
     And checkout my information shows error message
+
+
+    @loginGlitch
+    Scenario: login as glitch user
+      When I login as 'performance glitch user'
+      Then I can see a delay

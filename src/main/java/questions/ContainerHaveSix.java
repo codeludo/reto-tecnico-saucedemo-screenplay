@@ -2,7 +2,7 @@ package questions;
 import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import static ui.InventoryPageUI.INVENTORY_CONTAINER;
+import static ui.InventoryPageUI.INVENTORY_LIST;
 @AllArgsConstructor
 public class ContainerHaveSix implements Question<Boolean> {
     Integer number;
@@ -11,6 +11,6 @@ public class ContainerHaveSix implements Question<Boolean> {
     }
     @Override
     public Boolean answeredBy(Actor actor) {
-        return INVENTORY_CONTAINER.resolveAllFor(actor).size()==6;
+        return INVENTORY_LIST.resolveAllFor(actor).size()==6;
     }
 }

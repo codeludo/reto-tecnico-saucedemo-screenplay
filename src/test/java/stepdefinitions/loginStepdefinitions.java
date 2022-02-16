@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import org.hamcrest.Matchers;
 import questions.*;
 import tasks.ChooseAllProducts;
-import tasks.FilterItems;
 import tasks.GoToShoppingCart;
 import tasks.Login;
 
@@ -18,8 +17,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.equalTo;
 import static ui.CartPageUI.BTN_CHECKOUT;
 import static ui.CartPageUI.BTN_CONTINUE_SHOPPING;
-import static ui.InventoryPageUI.ITEM_LBLNAME;
-import static ui.InventoryPageUI.SELECTION;
+import static ui.InventoryPageUI.*;
 
 public class loginStepdefinitions {
 
@@ -104,6 +102,12 @@ public class loginStepdefinitions {
         data.put("Zip", "99999");
         theActorInTheSpotlight().attemptsTo(CheckoutPurchase.toVerifyPurchase(data));
         theActorInTheSpotlight().should(seeThat(ErrorMessage.appears()));
+    }
+
+    //glitch in login and back to home
+    @Then("I can see a delay")
+    public void i_can_see_a_delay(){
+        theActorInTheSpotlight().should(seeThat(DelayOn.changePage()));
     }
 
 

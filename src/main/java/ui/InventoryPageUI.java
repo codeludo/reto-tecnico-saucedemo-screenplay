@@ -51,11 +51,13 @@ public class InventoryPageUI {
             .the("the item in the inventory")
             .locatedBy("//*[text()='$']");
 
-
-    public static final Target INVENTORY_CONTAINER = Target
+    public static final Target INVENTORY_LIST = Target
             .the("items container list")
             .locatedBy("//div[@class=\"inventory_list\"]/div");
 
+    public static final Target INVENTORY_CONTAINER = Target
+            .the("all the items in inventory")
+            .locatedBy("//div[@id=\"inventory_container\"]");
 
     public static final Target ITEM_IMAGE = Target
             .the("image of item in inventory") // here we pass an integer to the xpath

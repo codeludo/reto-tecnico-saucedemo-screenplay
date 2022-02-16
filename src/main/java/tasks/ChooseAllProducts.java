@@ -16,7 +16,7 @@ public class ChooseAllProducts implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        for (int i = 1; i <= INVENTORY_CONTAINER.resolveAllFor(actor).size(); i++) {
+        for (int i = 1; i <= INVENTORY_LIST.resolveAllFor(actor).size(); i++) {
             actor.attemptsTo(Click.on(BTN_ADD.of(String.valueOf(i))));
         }
     }
