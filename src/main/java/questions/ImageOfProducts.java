@@ -21,11 +21,7 @@ public class ImageOfProducts implements Question<Boolean> {
         ArrayList<String> localImgArraySrc = new ArrayList<>();
         for (int i = 1; i < INVENTORY_CONTAINER.resolveAllFor(actor).size(); i++) {
             localImgArraySrc.add(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getAttribute("src"));
-            System.out.println("###################################\n##############################");
-            System.out.println(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getElement());
-            System.out.println(ITEM_IMAGE.of(String.valueOf(i)).resolveFor(actor).getAttribute("alt"));
         }
-        
         for(String src: localImgArraySrc){
             if(!src.equals(localImgArraySrc.get(0))) {
                 return Boolean.FALSE;

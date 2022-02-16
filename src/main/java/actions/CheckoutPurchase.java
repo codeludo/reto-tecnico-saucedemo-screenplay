@@ -19,9 +19,6 @@ public class CheckoutPurchase implements Interaction {
     public static CheckoutPurchase toVerifyPurchase(Map<String, String> withTax) {
         return instrumented(CheckoutPurchase.class, withTax);
     }
-    public static CheckoutPurchase toVerifyPurchase() {
-        return instrumented(CheckoutPurchase.class);
-    }
 
     @Override
     public <T extends Actor> void performAs(T actor) {

@@ -39,6 +39,10 @@ public class InventoryPageUI {
             .the("sort product dropdown")
             .locatedBy("//*[text()=\"{0}\"]");
 
+    public static final Target ITEM = Target
+            .the("item cart in inventory")
+            .located(By.xpath("//*[@class=\"inventory_list\"]/div[1]"));
+
     public static final Target ITEM_LBLNAME = Target
             .the("the ordered item in the inventory")
             .locatedBy("//*[text()='{0}']"); // here we pass a string to the xpath
