@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         //dryRun = true,
-        //tags = "@loginStandard",
+        tags = "@loginStandard",
         features = "src/test/resources/features",
         glue = "stepdefinitions"
 )

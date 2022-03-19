@@ -43,7 +43,7 @@ serenity {
 
 dependencies {
     implementation 'com.github.javafaker:javafaker:1.0.2',
-        'org.slf4j:slf4j-simple:1.7.35',
+            'org.slf4j:slf4j-simple:1.7.36',
         'net.serenity-bdd:serenity-core:3.1.20',
         'net.serenity-bdd:serenity-screenplay:3.1.20',
         'net.serenity-bdd:serenity-screenplay-webdriver:3.1.20',
